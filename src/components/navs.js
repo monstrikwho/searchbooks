@@ -29,7 +29,7 @@ class Navs extends React.Component {
         if(inputValue.length < 3) {
             console.log('lose');
         } else {
-            response(inputValue, this.props.getData) // выполняем запрос
+            response(inputValue, this.props.getData, this.props.getRequestPages) // выполняем запрос
         }
     }
 
