@@ -1,5 +1,5 @@
 export var response = (inputValue, getData, getRequestPages) => {
-    getData([], null);
+    getData([], null, inputValue.toUpperCase());
     
     var nameBookWords = inputValue.split(' ');
     var nameBook = nameBookWords.join('+');
@@ -15,7 +15,6 @@ export var response = (inputValue, getData, getRequestPages) => {
         while(pageCount !== maxPage) {
             
             await req(pageCount);
-            // getInputValue(searchedBooks)
             
             pageCount++
         } 
@@ -35,7 +34,7 @@ export var response = (inputValue, getData, getRequestPages) => {
                 const htmlDocument = parser.parseFromString(text, "text/html");
                 
                 if(htmlDocument.querySelector('.xs_msg')) { // if books was not searched
-                    getData([], false);
+                    getData([], false, inputValue.toUpperCase());
                     console.log('Книг не найдено');
                 } else {
                     var lt118Tr = htmlDocument.querySelector('.lt118 tr');
@@ -45,13 +44,12 @@ export var response = (inputValue, getData, getRequestPages) => {
                         var pAll = tdAll[1].querySelectorAll('a');
                         maxPage = +pAll[pAll.length-1].querySelector('div').textContent + 1;
                         
-                        getData([], true);
-                        // getRequestPages(pageCount, maxPage-1);
+                        getData([], true, inputValue.toUpperCase());
                         console.log('несколько страниц');
                         forLoop();
                     } else {
                         maxPage = 2;
-                        getData([], true);
+                        getData([], true, inputValue.toUpperCase());
                         console.log('одна страница');
                         forLoop();
                     }
@@ -133,8 +131,6 @@ export var response = (inputValue, getData, getRequestPages) => {
             }
             // 
 
-            // console.log(similarityCount, similarity);
-            // console.log(nameBookWords, itemWords);
 
             if(+itemPages > 100 && similarityCount >= similarity) {
                 
@@ -149,15 +145,14 @@ export var response = (inputValue, getData, getRequestPages) => {
                 }
 
                 searchedBooks.push(itemInfo)
-                // getData(searchedBooks, true)
             }
 
             if(searchedBooks.length > 1 && pageCount === maxPage-1) {
-                getData(searchedBooks, true)
+                getData(searchedBooks, true, inputValue.toUpperCase())
             }
 
             if(searchedBooks.length < 1 && pageCount === maxPage-1) {
-                getData(searchedBooks, false)
+                getData(searchedBooks, false, 'СТРАНИЦА ПОИСКА')
             }
         }
 
