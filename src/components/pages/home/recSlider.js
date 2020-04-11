@@ -12,16 +12,16 @@ class RecSlider extends React.Component {
         this.state = {
             settings: {
                 dots: false,
-                slidesToShow: 3,
-                slidesToScroll: 1
+                slidesToShow: 4,
+                slidesToScroll: 1,
             }
         }
     }
 
     render() {
         return (
-            <Row>
-                <div>{this.props.itemData.genreName}</div>
+            <Row className="block-divided">
+                <div className="block-title">{this.props.itemData.genreName}</div>
                <Slider {...this.state.settings}>
                    {this.props.itemData.items.map((item, i) => (
                        <div className="recBook" key={i}>
