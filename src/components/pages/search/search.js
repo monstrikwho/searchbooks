@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row,  Spinner } from 'react-bootstrap';
 import BooksItem from './booksItem';
+import '../../../sass/search.sass';
 
 class SearchPage extends React.Component {
     render() {
@@ -14,15 +15,20 @@ class SearchPage extends React.Component {
                         // проверяем доступность, показываем кол-во страниц
                         <BooksItem books={this.props.booksArr} />
                         :
-                        <div>
-                            <Spinner animation="border" />
-                            {this.props.pageCount} - {this.props.pageCountMax}
+                        <div className="loading">
+                            <div className="message">
+                                <div>
+                                    <Spinner animation="grow" size="sm" />
+                                    Идет анализ...
+                                </div>
+                                <div>{this.props.pageCount} - {this.props.pageCountMax}</div>
+                            </div>
                         </div>
                     :
                         (this.props.booksStatus === null)
                         ?
                         // идет поиск
-                        <div>
+                        <div className="loading">
                             <Spinner animation="border" />
                             Идет поиск...
                         </div>

@@ -81,12 +81,33 @@ export var response = (inputValue, getData, getRequestPages) => {
                 console.log(error)
             });
     }
-        
+    
+    function des(page) {
+        return fetch(proxyUrl+page, {
+            method: 'GET',
+            headers: {
+                'accept': '*/*',
+                'Access-Control-Allow-Origin': '*',
+                // 'Connection': 'keep-alive'
+            }})
+            .then(response => response.text())
+            .then(async text => {
+                const parser = new DOMParser();
+                const htmlDocument = parser.parseFromString(text, "text/html");
+
+                var description = htmlDocument.querySelector('.right_content .island table.lt49').querySelector('table.lt102').querySelectorAll('tr')[0].querySelector('[itemprop="description"]').textContent;
+                // console.log(description);
+                return description
+            })
+            .catch((error) => {
+                console.log(error)
+            });
+    }
                 
     
     var searchedBooks = [];
                 
-    const getBooksOnPage = page => {
+    const getBooksOnPage = async page => {
         var bookItems = page.querySelectorAll('td.right_content table.island');
         
         for (const item of bookItems) {
@@ -97,8 +118,10 @@ export var response = (inputValue, getData, getRequestPages) => {
             var itemName = item.querySelector('span[itemprop="name"]').textContent;
             var itemAuthor = item.querySelector('span[itemprop="author"] a') ? item.querySelector('span[itemprop="author"] a').textContent : 'Не указан';
             var itemGenre = item.querySelector('span[itemprop="genre"] a').textContent;
+            // var description = item.querySelectorAll('tr')[1].querySelector('.BBHtmlCodeInner').textContent;
+            
             var itemPages = 0;
-            var itemYears = '';
+            var itemYears = 'Не указано';
             
 
             // 
@@ -133,6 +156,7 @@ export var response = (inputValue, getData, getRequestPages) => {
 
 
             if(+itemPages > 100 && similarityCount >= similarity) {
+                let description = await des(itemUrl);
                 
                 var itemInfo = {
                     url: itemUrl,
@@ -141,7 +165,8 @@ export var response = (inputValue, getData, getRequestPages) => {
                     author: itemAuthor,
                     genre: itemGenre,
                     pages: itemPages,
-                    years: itemYears
+                    years: itemYears,
+                    desc: description
                 }
 
                 searchedBooks.push(itemInfo)

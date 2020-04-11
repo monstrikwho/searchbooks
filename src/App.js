@@ -53,19 +53,19 @@ export default class App extends React.Component {
           renameNavbar={this.renameNavbar}
         />
 
-        {/* {(this.state.pageCountMax) ? `${this.state.pageCount} - ${this.state.pageCountMax}` : 'Идет поиск...'} */}
-        <Switch>
-          <Route path='/' exact component={HomePage} />
-          <Route path='/search' render={() => (
-              <SearchPage 
-                booksArr={this.state.booksArr} 
-                booksStatus={this.state.booksStatus} 
-                pageCount={this.state.pageCount} 
-                pageCountMax={this.state.pageCountMax} 
-              />
-          )} />
-        </Switch>
-
+        <div className="content">
+          <Switch>
+            <Route path='/' exact component={HomePage} />
+            <Route path='/search' render={() => (
+                <SearchPage 
+                  booksArr={this.state.booksArr} 
+                  booksStatus={this.state.booksStatus} 
+                  pageCount={this.state.pageCount} 
+                  pageCountMax={this.state.pageCountMax} 
+                />
+            )} />
+          </Switch>
+        </div>
 
         {/* <Route path='/page' render={(props) => (
           <Page {...props} data={extraProps}/>
