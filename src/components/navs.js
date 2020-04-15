@@ -1,7 +1,8 @@
 import React from 'react';
-import { response } from './scripts/handleSearch';
 import { Container, Navbar, Form, FormControl, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { response } from './scripts/handleSearch';
+import { BackDoorSVG } from './assets/svg';
 import '../sass/navs.sass'
 
 class Navs extends React.Component {
@@ -30,6 +31,7 @@ class Navs extends React.Component {
             console.log('lose');
         } else {
             response(inputValue, this.props.getData, this.props.getRequestPages) // выполняем запрос
+            this.props.renameNavbar('СТРАНИЦА ПОИСКА', 'search');
             this.setState({
                 inputValue: ''
             })
@@ -42,25 +44,24 @@ class Navs extends React.Component {
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <div className="navbar-action">
-                        <Link to="/" 
+                        <Link to={(this.props.pageName === 'read') ? process.env.PUBLIC_URL + '/search' : process.env.PUBLIC_URL + '/'} 
                             onClick={() => {
-                                this.props.renameNavbar('#НАЙДИКНИГУ')
+                                this.props.renameNavbar('#НАЙДИКНИГУ', (this.props.pageName === 'read') ? 'search' : 'home')
+                                if (this.props.pageName === 'read') {
+                                    this.props.getResTextBook(null);
+                                }
                             }}      
                         >
                             {
-                                (this.props.pageName === '#НАЙДИКНИГУ')
+                                (this.props.pageName === 'home')
                                 ?
                                 ''
                                 :
-                                <svg className="bi bi-box-arrow-in-left" width="1.75rem" height="1.75rem" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fillRule="evenodd" d="M7.854 11.354a.5.5 0 000-.708L5.207 8l2.647-2.646a.5.5 0 10-.708-.708l-3 3a.5.5 0 000 .708l3 3a.5.5 0 00.708 0z" clipRule="evenodd"/>
-                                    <path fillRule="evenodd" d="M15 8a.5.5 0 00-.5-.5h-9a.5.5 0 000 1h9A.5.5 0 0015 8z" clipRule="evenodd"/>
-                                    <path fillRule="evenodd" d="M2.5 14.5A1.5 1.5 0 011 13V3a1.5 1.5 0 011.5-1.5h8A1.5 1.5 0 0112 3v1.5a.5.5 0 01-1 0V3a.5.5 0 00-.5-.5h-8A.5.5 0 002 3v10a.5.5 0 00.5.5h8a.5.5 0 00.5-.5v-1.5a.5.5 0 011 0V13a1.5 1.5 0 01-1.5 1.5h-8z" clipRule="evenodd"/>
-                                </svg>
+                                <BackDoorSVG />
                             }
                         </Link>
                         <Navbar.Brand>
-                            {this.props.pageName}
+                            {this.props.navBarTitle}
                         </Navbar.Brand>
                     </div>
                     <div className='col-md-6'>
@@ -72,7 +73,7 @@ class Navs extends React.Component {
                                 onChange={this.handleInputChange} 
                                 value={this.state.inputValue.replace(/[^A-Za-zА-Яа-яЁё0-9]/g, ' ').split('  ').join(' ')}
                             />
-                            <Link to='/search'> 
+                            <Link to={process.env.PUBLIC_URL + '/search'}> 
                                 <Button 
                                     type="submit" 
                                     variant="outline-info" 
