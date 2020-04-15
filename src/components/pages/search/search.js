@@ -13,7 +13,13 @@ class SearchPage extends React.Component {
                         (this.props.pageCount === this.props.pageCountMax && this.props.booksArr.length > 1)
                         ?
                         // проверяем доступность, показываем кол-во страниц
-                        <BooksItem books={this.props.booksArr} />
+                        <BooksItem 
+                            books={this.props.booksArr} 
+                            getResTextBook={this.props.getResTextBook} 
+                            getBookUrl={this.props.getBookUrl}
+                            getBookMaxCountPages={this.props.getBookMaxCountPages}
+                            renameNavbar={this.props.renameNavbar}
+                        />
                         :
                         <div className="loading">
                             <div className="message">
