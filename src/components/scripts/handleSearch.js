@@ -1,6 +1,6 @@
 export var response = (inputValue, getData, getRequestPages) => {
-    getData([], null, inputValue.toUpperCase());
-    
+    getData([], null);
+
     var nameBookWords = inputValue.split(' ');
     var nameBook = nameBookWords.join('+');
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -34,7 +34,7 @@ export var response = (inputValue, getData, getRequestPages) => {
                 const htmlDocument = parser.parseFromString(text, "text/html");
                 
                 if(htmlDocument.querySelector('.xs_msg')) { // if books was not searched
-                    getData([], false, inputValue.toUpperCase());
+                    getData([], false);
                     console.log('Книг не найдено');
                 } else {
                     var lt118Tr = htmlDocument.querySelector('.lt118 tr');
@@ -44,12 +44,12 @@ export var response = (inputValue, getData, getRequestPages) => {
                         var pAll = tdAll[1].querySelectorAll('a');
                         maxPage = +pAll[pAll.length-1].querySelector('div').textContent + 1;
                         
-                        getData([], true, inputValue.toUpperCase());
+                        getData([], true);
                         console.log('несколько страниц');
                         forLoop();
                     } else {
                         maxPage = 2;
-                        getData([], true, inputValue.toUpperCase());
+                        getData([], true);
                         console.log('одна страница');
                         forLoop();
                     }
@@ -96,8 +96,9 @@ export var response = (inputValue, getData, getRequestPages) => {
                 const htmlDocument = parser.parseFromString(text, "text/html");
 
                 var description = htmlDocument.querySelector('.right_content .island table.lt49').querySelector('table.lt102').querySelectorAll('tr')[0].querySelector('[itemprop="description"]').textContent;
+                var readLink = htmlDocument.querySelector('.right_content .island table.lt49').querySelector('a.read').getAttribute('href');
                 // console.log(description);
-                return description
+                return [description, readLink]
             })
             .catch((error) => {
                 console.log(error)
@@ -118,7 +119,6 @@ export var response = (inputValue, getData, getRequestPages) => {
             var itemName = item.querySelector('span[itemprop="name"]').textContent;
             var itemAuthor = item.querySelector('span[itemprop="author"] a') ? item.querySelector('span[itemprop="author"] a').textContent : 'Не указан';
             var itemGenre = item.querySelector('span[itemprop="genre"] a').textContent;
-            // var description = item.querySelectorAll('tr')[1].querySelector('.BBHtmlCodeInner').textContent;
             
             var itemPages = 0;
             var itemYears = 'Не указано';
@@ -156,7 +156,8 @@ export var response = (inputValue, getData, getRequestPages) => {
 
 
             if(+itemPages > 100 && similarityCount >= similarity) {
-                let description = await des(itemUrl);
+                let desArr = await des(itemUrl);
+                let [description, readLink] = desArr;
                 
                 var itemInfo = {
                     url: itemUrl,
@@ -166,18 +167,19 @@ export var response = (inputValue, getData, getRequestPages) => {
                     genre: itemGenre,
                     pages: itemPages,
                     years: itemYears,
-                    desc: description
+                    desc: description,
+                    readLink: `https://www.litmir.me${readLink}`
                 }
 
                 searchedBooks.push(itemInfo)
             }
 
             if(searchedBooks.length > 1 && pageCount === maxPage-1) {
-                getData(searchedBooks, true, inputValue.toUpperCase())
+                getData(searchedBooks, true)
             }
 
             if(searchedBooks.length < 1 && pageCount === maxPage-1) {
-                getData(searchedBooks, false, 'СТРАНИЦА ПОИСКА')
+                getData(searchedBooks, false)
             }
         }
 
