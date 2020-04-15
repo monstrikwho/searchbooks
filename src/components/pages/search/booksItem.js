@@ -1,20 +1,12 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { resReadBook } from '../../scripts/readBooks';
 import '../../../sass/booksItem.sass';
 
 class BooksItem extends React.Component {
-    // constructor(props) {
-    //     super(props)
-        
-    //     this.state = {
-    //     }
-
-    //     this.handleInputChange = this.handleInputChange.bind(this);
-    // }
-
 
     cutDesc = desc => desc.slice(0, 800);
-    
 
     render() {
         return (
@@ -26,11 +18,19 @@ class BooksItem extends React.Component {
                                 <img src={item.img} alt={item.name}/>
                             </div>
                             <div className="desc">
-                                <div className="name">
-                                    <a href={item.url}>
+                                <Link 
+                                    to={process.env.PUBLIC_URL + "/read"}
+                                    onClick={() => { 
+                                        resReadBook(item.readLink, this.props.getResTextBook, 1)
+                                        this.props.getBookUrl(item.readLink); 
+                                        this.props.getBookMaxCountPages(item.pages); 
+                                        this.props.renameNavbar('Вернуться назад', 'read');
+                                    }}
+                                >
+                                    <div className="name">
                                         <span>{item.name}</span>
-                                    </a>
-                                </div>
+                                    </div>
+                                </Link>
                                 <div className="author">
                                     <span>Автор: </span>{item.author}
                                 </div>
