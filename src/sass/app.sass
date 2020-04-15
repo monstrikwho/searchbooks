@@ -4,6 +4,7 @@
 
 .content
     display: flex
+    flex-direction: column
     min-height: calc(100vh - 56px)
     background-color: #edeef0
 a
@@ -12,6 +13,8 @@ a
     &:hover
         text-decoration: none !important
         color: lighten(#444, 10%) !important
+    &:focus
+        outline: none
 
 .block-divided
     position: relative

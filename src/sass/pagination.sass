@@ -1,0 +1,29 @@
+.pagination
+    padding: 10px 0
+    justify-content: center
+    background-color: #51BAE8
+    border-radius: 0 !important
+    li
+        margin: 0 5px
+        &:hover
+            cursor: pointer
+    .page-item,
+    .previous,
+    .next,
+    .break-me
+        font-size: 22px
+        font-weight: 400
+        &:hover
+            a
+                color: lighten(#000, 40%) !important
+        a
+            color: #000 !important
+    .next,
+    .previous
+        svg
+            display: flex
+            height: 100%
+
+    .active
+        a
+            color: #fff !important
