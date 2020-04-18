@@ -29,33 +29,33 @@ class ReadPage extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <React.Fragment>
-                    {
-                        (this.props.bookText !== null)
-                        ?
-                    <Container>
-                        <div dangerouslySetInnerHTML={{ __html: this.props.bookText }} />
-                    </Container>
-                        :
+                {
+                    (this.props.bookText !== null)
+                    ?
+                <Container>
+                    <div dangerouslySetInnerHTML={{ __html: this.props.bookText }} id="booktext" />
+                </Container>
+                    :
+                    <div className="spinner-box">
                         <Spinner animation="border" />
-                    }
-                    <Container>
-                        <ReactPaginate
-                            previousLabel={<ArrowLeftSVG />}
-                            nextLabel={<ArrowRightSVG />}
-                            breakLabel={'...'}
-                            breakClassName={'break-me'}
-                            pageCount={this.state.bookMaxCountPages}
-                            marginPagesDisplayed={1}
-                            pageRangeDisplayed={3}
-                            onPageChange={this.handlePageClick}
-                            pageClassName={'page-item'}
-                            containerClassName={'pagination'}
-                            subContainerClassName={'pages pagination'}
-                            activeClassName={'active'}
-                        />
-                    </Container>
-                </React.Fragment>
+                    </div>
+                }
+                <Container id="pagination-box">
+                    <ReactPaginate
+                        previousLabel={<ArrowLeftSVG />}
+                        nextLabel={<ArrowRightSVG />}
+                        breakLabel={'...'}
+                        breakClassName={'break-me'}
+                        pageCount={this.state.bookMaxCountPages}
+                        marginPagesDisplayed={1}
+                        pageRangeDisplayed={3}
+                        onPageChange={this.handlePageClick}
+                        pageClassName={'page-item'}
+                        containerClassName={'pagination'}
+                        subContainerClassName={'pages pagination'}
+                        activeClassName={'active'}
+                    />
+                </Container>
             </React.Fragment>
         )
     }
