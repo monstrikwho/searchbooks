@@ -64,28 +64,34 @@ class Navs extends React.Component {
                             {this.props.navBarTitle}
                         </Navbar.Brand>
                     </div>
-                    <div className='col-md-6'>
-                        <Form inline onSubmit={this.handleButtonClick}>
-                            <FormControl 
-                                type="text" 
-                                placeholder="Search" 
-                                className="mr-sm-2" 
-                                onChange={this.handleInputChange} 
-                                value={this.state.inputValue.replace(/[^A-Za-zА-Яа-яЁё0-9]/g, ' ').split('  ').join(' ')}
-                            />
-                            <Link to={process.env.PUBLIC_URL + '/search'}> 
-                                <Button 
-                                    type="submit" 
-                                    variant="outline-info" 
-                                    onClick={() => {
-                                        this.handleButtonClick()
-                                    }}
-                                >
-                                    Search
-                                </Button>
-                            </Link>
-                        </Form>
-                    </div>
+                    {
+                        (this.props.pageName === 'read')
+                        ?
+                        ''
+                        :
+                        <div className='col-md-6'>
+                            <Form inline onSubmit={this.handleButtonClick}>
+                                <FormControl 
+                                    type="text" 
+                                    placeholder="Search" 
+                                    className="mr-sm-2" 
+                                    onChange={this.handleInputChange} 
+                                    value={this.state.inputValue.replace(/[^A-Za-zА-Яа-яЁё0-9]/g, ' ').split('  ').join(' ')}
+                                />
+                                <Link to={process.env.PUBLIC_URL + '/search'}> 
+                                    <Button 
+                                        type="submit" 
+                                        variant="outline-info" 
+                                        onClick={() => {
+                                            this.handleButtonClick()
+                                        }}
+                                    >
+                                        Search
+                                    </Button>
+                                </Link>
+                            </Form>
+                        </div>
+                    }
                 </Container>
             </Navbar>
         )

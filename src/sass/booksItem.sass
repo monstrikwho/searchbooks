@@ -2,6 +2,7 @@
     display: flex
     width: 100%
     .img-block
+        text-align: center
         margin-right: 15px
         img
             height: 300px
@@ -18,7 +19,16 @@
         .genre,
         .years,
         .description
+            text-align: justify
             span
                 color: #666
                 font-size: 12px
                 font: inherit
+
+
+// @media screen and (max-width: 1200px)
+// @media screen and (max-width: 992px)
+// @media screen and (max-width: 768px)
+@media screen and (max-width: 576px)
+    .book
+        flex-direction: column
