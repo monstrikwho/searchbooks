@@ -35,7 +35,7 @@ export var response = (inputValue, getData, getRequestPages) => {
                 
                 if(htmlDocument.querySelector('.xs_msg')) { // if books was not searched
                     getData([], false);
-                    console.log('Книг не найдено');
+                    // console.log('Книг не найдено');
                 } else {
                     var lt118Tr = htmlDocument.querySelector('.lt118 tr');
                     
@@ -45,12 +45,12 @@ export var response = (inputValue, getData, getRequestPages) => {
                         maxPage = +pAll[pAll.length-1].querySelector('div').textContent + 1;
                         
                         getData([], true);
-                        console.log('несколько страниц');
+                        // console.log('несколько страниц');
                         forLoop();
                     } else {
                         maxPage = 2;
                         getData([], true);
-                        console.log('одна страница');
+                        // console.log('одна страница');
                         forLoop();
                     }
                     getRequestPages(pageCount, maxPage-1);
@@ -97,7 +97,7 @@ export var response = (inputValue, getData, getRequestPages) => {
 
                 var description = htmlDocument.querySelector('.right_content .island table.lt49').querySelector('table.lt102').querySelectorAll('tr')[0].querySelector('[itemprop="description"]').textContent;
                 var readLink = htmlDocument.querySelector('.right_content .island table.lt49').querySelector('a.read').getAttribute('href');
-                // console.log(description);
+                
                 return [description, readLink]
             })
             .catch((error) => {
@@ -109,16 +109,16 @@ export var response = (inputValue, getData, getRequestPages) => {
     var searchedBooks = [];
                 
     const getBooksOnPage = async page => {
-        var bookItems = page.querySelectorAll('td.right_content table.island');
-        
+        var bookItems = page.querySelector('td.right_content') ? page.querySelectorAll('td.right_content table.island') : page.querySelectorAll('.right_content .lt26a tbody .island');
+
         for (const item of bookItems) {
             var itemSrc = item.querySelector('.book_name a').getAttribute('href');
             
             var itemUrl = `https://www.litmir.me${itemSrc}`;
-            var itemImg = item.querySelector('tr td a img').dataset.src;
+            var itemImg = (item.querySelector('tr td a img')) ? item.querySelector('tr td a img').dataset.src : item.querySelector('.lt22 a img').dataset.src;
             var itemName = item.querySelector('span[itemprop="name"]').textContent;
             var itemAuthor = item.querySelector('span[itemprop="author"] a') ? item.querySelector('span[itemprop="author"] a').textContent : 'Не указан';
-            var itemGenre = item.querySelector('span[itemprop="genre"] a').textContent;
+            var itemGenre = item.querySelector('span[itemprop="genre"]').textContent;
             
             var itemPages = 0;
             var itemYears = 'Не указано';
@@ -126,7 +126,6 @@ export var response = (inputValue, getData, getRequestPages) => {
 
             // 
             var desc1All = item.querySelector('tr').querySelectorAll('span.desc1');
-
             for(const item of desc1All) {
                 let itemText = item.textContent;
                 if(itemText === 'Год:') {
@@ -174,10 +173,7 @@ export var response = (inputValue, getData, getRequestPages) => {
                 searchedBooks.push(itemInfo)
             }
 
-            if(searchedBooks.length > 1 && pageCount === maxPage-1) {
-                getData(searchedBooks, true)
-            }
-
+            getData(searchedBooks, true)
             if(searchedBooks.length < 1 && pageCount === maxPage-1) {
                 getData(searchedBooks, false)
             }
