@@ -10,7 +10,7 @@ class SearchPage extends React.Component {
                 {
                     (this.props.booksStatus)
                     ?
-                        (this.props.pageCount === this.props.pageCountMax && this.props.booksArr.length > 1)
+                        (this.props.pageCount === this.props.pageCountMax)
                         ?
                         // проверяем доступность, показываем кол-во страниц
                         <BooksItem 

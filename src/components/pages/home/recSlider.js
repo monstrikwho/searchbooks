@@ -18,6 +18,30 @@ class RecSlider extends React.Component {
         }
     }
 
+    componentDidMount() {
+        if(window.innerWidth < 400) {
+            this.setState({
+                settings: {
+                    slidesToShow: 1
+                }
+            })
+        }
+        if(window.innerWidth > 400 && window.innerWidth < 768) {
+            this.setState({
+                settings: {
+                    slidesToShow: 2
+                }
+            })
+        }
+        if(window.innerWidth > 768 && window.innerWidth < 1024) {
+            this.setState({
+                settings: {
+                    slidesToShow: 3
+                }
+            })
+        }
+    }
+
     render() {
         return (
             <Row className="block-divided">
@@ -30,7 +54,7 @@ class RecSlider extends React.Component {
                                 <div className="bookName">{item.name}</div>
                                <div className="d-flex">
                                     <div className="bookAuthor">{item.author}</div>
-                                    <div className="years">{item.years}</div>
+                                    {/* <div className="years">{item.years}</div> */}
                                </div>
                            </div>
                        </div>

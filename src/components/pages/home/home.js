@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import '../../../sass/home.sass'
 import RecSlider from './recSlider';
 import FactsContainer from './factsContainer';
 import recData from './recomended.json';
