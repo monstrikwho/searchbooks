@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, ProgressBar } from 'react-bootstrap';
 import '../../../sass/home.sass'
 import RecSlider from './recSlider';
 import FactsContainer from './factsContainer';
@@ -11,30 +11,59 @@ class HomePage extends React.Component {
         super(props)
 
         this.state = {
-            fact: null
+            fact: null,
+            duration: 5750,
+            factTimer: 0,
+            step: 250,
+            endAfter: 0
         }
     }
 
     componentDidMount() {
+        this.changeFacts();
+
+        this.interval = setInterval(this.changeFacts, this.state.duration);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval); // Clear the interval right before component unmount
+    }
+
+    changeFacts = () => {
+        clearInterval(this.interval2); // Clear the interval right before component unmount
+
         this.setState({
-            fact: factsData[Math.floor(Math.random() * factsData.length)].text
+            fact: factsData[Math.floor(Math.random() * factsData.length)].text,
+            factTimer: 0,
+            step: 250,
+            endAfter: 0
         })
-        setInterval(() => {
+
+        this.changeProgress()
+    }
+
+    changeProgress = () => {
+        this.interval2 = setInterval(() => {
             this.setState({
-                fact: factsData[Math.floor(Math.random() * factsData.length)].text
+                factTimer: this.state.endAfter / 5000 * 100,
+                endAfter: this.state.endAfter + 250
             })
-        }, 5000)
+        }, 250)
     }
 
     render() {
         return (
             <React.Fragment>
                 <Container>
-                    {recData.map((item, i) => <RecSlider key={i} itemData={item} />)}
+                   <RecSlider itemData={recData[0]} />
                 </Container>
                 <FactsContainer>
                     {this.state.fact}
+                    <ProgressBar now={this.state.factTimer} /> 
                 </FactsContainer>
+                <Container>
+                   <RecSlider itemData={recData[1]} />
+                </Container>
             </React.Fragment>
         )
     }
