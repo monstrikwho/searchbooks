@@ -9,4 +9,37 @@
                 cursor: pointer
     .form-control
         flex-grow: 1
+        &:focus
+            box-shadow: none
+    .btn
+        &:focus
+            box-shadow: none
 
+
+@media screen and (max-width: 576px)
+    .navbar
+        .container
+            flex-direction: column
+        .form-inline
+            justify-content: space-between
+        .form-control
+            flex-grow: 0
+            flex-basis: 70%
+        a
+            flex-basis: 10%
+
+@media screen and (max-width: 340px)
+    .navbar
+        .container
+            flex-direction: column
+
+        .form-control
+            // width: 80%
+            flex-grow: 1
+            // flex-basis: 70%
+        a
+            margin-top: 10px
+            flex-basis: 100%
+            // width: 100%
+            button
+                width: 100%
