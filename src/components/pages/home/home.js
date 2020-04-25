@@ -11,20 +11,19 @@ class HomePage extends React.Component {
         super(props)
 
         this.state = {
-            fact: null,
-            factProgress: 0,
-            step: 250,
-            duration: 5750,
-            endAfter: 0,
-            statusTimer: 0, // 1 = satrt, 2 = paused, 3 = resume, 0 = null
-            durationEndAfter: 5750
+            fact: null,  // Текст факта
+            progressScale: 0,  // Состояние шкалы в процентах
+            step: 250, // Один процент от времени цикла
+            duration: 5500,  // Время одного цикла 
+            countTime: 0,  // текущее время. высчитаываем, чтобы показать процент оставшегося времени
+            statusTimer: 0 // 1 = satrt, 2 = paused
         }
     }
 
     componentDidMount() {
-        this.changeFunc();
+        this.changeFacts(); // Выводим первый факт
 
-        this.timer = this.intervalTimer(this.changeFunc, this.state.duration);
+        this.timer = this.intervalTimer(this.changeFacts, this.state.duration); 
 
         document.querySelector('.facts').addEventListener('mouseover', () => {
             this.timerPause();
@@ -32,7 +31,7 @@ class HomePage extends React.Component {
         document.querySelector('.facts').addEventListener('mouseleave', () => {
             this.timerResume();
         });
-        document.querySelector('.facts').addEventListener('touchstart', () => {
+        document.querySelector('.facts').addEventListener('touchstart', () => { 
             this.timerPause();
         });
         document.querySelector('.facts').addEventListener('touchend', () => {
@@ -42,7 +41,10 @@ class HomePage extends React.Component {
     }
 
     componentWillUnmount() {
-        clearInterval(this.interval); // Clear the interval right before component unmount
+        // Clear the interval right before component unmount
+        clearTimeout(this.timeOut); 
+        clearInterval(this.intervalChangeProgressScale); 
+        clearInterval(this.intervalChangeFacts); 
     }
 
 
@@ -50,76 +52,52 @@ class HomePage extends React.Component {
 
 
 
-    changeProgress = () => {
-        this.interval2 = setInterval(() => {
+    changeProgressScale = () => {  // Меняем состояние прогресс-строки
+        this.intervalChangeProgressScale = setInterval(() => {
             this.setState({
-                factProgress: this.state.endAfter / 5000 * 100,
-                endAfter: this.state.endAfter + 250
+                progressScale: this.state.countTime / 5000 * 100,
+                countTime: this.state.countTime + this.state.step
             })
-        }, 250)
-    }
-
-    changeDurationEndAfter = () => {
-        this.setState({ durationEndAfter: this.state.durationEndAfter - 250 })
+        }, this.state.step)
     }
 
 
-
-    changeFunc = () => {
-        window.clearInterval(this.intervalDuration);
-        clearInterval(this.interval2); 
+    changeFacts = () => {  // Меняем факт, чистим и запускаем по новой функцию, изменяющую состояние оставшегося времени факта
+        clearInterval(this.intervalChangeProgressScale); 
 
         this.setState({
             fact: factsData[Math.floor(Math.random() * factsData.length)].text,
-            durationEndAfter: 5750,
-            factProgress: 0,
-            step: 250,
-            endAfter: 0
+            progressScale: 0,
+            countTime: 0
         })
 
-        this.changeProgress()
-
-        this.intervalDuration = window.setInterval(this.changeDurationEndAfter, 250)
+        this.changeProgressScale();
     }
 
 
     
     // ####################### ACTIONS #######################
-    intervalTimer = (callback, interval) => {
-        this.timerId = window.setInterval(callback, interval);
+    intervalTimer = (callback, interval) => {  // Функция-обертка, чтобы повторно запускать интервал
+        this.intervalChangeFacts = setInterval(callback, interval);
         this.setState({ statusTimer: 1 })
     }
 
-    timerPause = () => {
-        window.clearTimeout(this.timeOut);
-        clearInterval(this.interval2); 
-        clearInterval(this.intervalDuration); 
-        if (this.state.statusTimer !== 1) return;
-        
-        window.clearInterval(this.timerId);
+    timerPause = () => {  // Ставим на паузу (чистим все интервалы)
+        clearTimeout(this.timeOut);
+        clearInterval(this.intervalChangeProgressScale); 
+        clearInterval(this.intervalChangeFacts);
         this.setState({ statusTimer: 2 })
-        console.log(this.state.durationEndAfter);
-        
     }
 
-    timerResume = () => {
-        if (this.state.statusTimer !== 2) return;
-        
-        this.changeProgress()
-        this.intervalDuration = window.setInterval(this.changeDurationEndAfter, 250)
+    timerResume = () => {  // Возобнавляем шкалу времени, запускаем колбек, который заново запустит интервал
+        this.changeProgressScale();
+        this.timeOut = setTimeout(this.timerTimeoutCallback, this.state.duration - this.state.countTime);
         this.setState({ statusTimer: 1 })
-        
-        console.log(this.state.durationEndAfter);
-        this.timeOut = window.setTimeout(this.timerTimeoutCallback, this.state.durationEndAfter);
     }
 
-    timerTimeoutCallback = () => {
-        // if (this.state.statusTimer !== 1) return;
-
-        this.changeFunc();
-
-        this.timerId = window.setInterval(this.changeFunc, this.state.duration);
-        this.setState({ statusTimer: 1 })
+    timerTimeoutCallback = () => {  // Обновляем факт и запускаем занаво цикл
+        this.changeFacts();
+        this.timer = this.intervalTimer(this.changeFacts, this.state.duration);
     };
     // ####################### END ACTIONS #######################
 
@@ -132,7 +110,7 @@ class HomePage extends React.Component {
                 </Container>
                 <FactsContainer>
                     {this.state.fact}
-                    <ProgressBar now={this.state.factProgress} /> 
+                    <ProgressBar now={this.state.progressScale} /> 
                 </FactsContainer>
                 <Container>
                    <RecSlider itemData={recData[1]} />
