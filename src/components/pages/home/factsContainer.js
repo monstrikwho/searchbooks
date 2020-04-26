@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FactsContainer(props) {
     return (
-        <div className="container facts">
+        <div className="container" id={props.id}>
             <div className="row block-divided">
                 <div className="block-title">
                     {props.nameContainer}

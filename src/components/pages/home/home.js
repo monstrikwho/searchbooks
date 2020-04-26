@@ -25,21 +25,20 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     this.changeFacts(); // Выводим первый факт
-
     this.timer = this.intervalTimer(this.changeFacts, this.state.duration);
 
-    document.querySelector(".facts").addEventListener("mouseover", () => {
-      this.timerPause();
+    const controlBlockArr = [
+      document.querySelector("#facts"),
+      document.querySelector("#authors")
+    ]
+
+    controlBlockArr.forEach(item => {
+      item.addEventListener('mouseover', () => { this.timerPause() });
+      item.addEventListener('mouseleave', () => { this.timerResume() });
+      item.addEventListener('touchstart', () => { this.timerPause() });
+      item.addEventListener('touchend', () => { this.timerResume() });
     });
-    document.querySelector(".facts").addEventListener("mouseleave", () => {
-      this.timerResume();
-    });
-    document.querySelector(".facts").addEventListener("touchstart", () => {
-      this.timerPause();
-    });
-    document.querySelector(".facts").addEventListener("touchend", () => {
-      this.timerResume();
-    });
+
   }
 
   componentWillUnmount() {
@@ -117,7 +116,7 @@ class HomePage extends React.Component {
             renameNavbar={this.props.renameNavbar}
           />
         </Container>
-        <FactsContainer nameContainer={"Facts"}>
+        <FactsContainer nameContainer={"Facts"} id={'facts'}>
           <div className="fact">{this.state.fact}</div>
           <ProgressBar now={this.state.progressScale} />
         </FactsContainer>
@@ -130,7 +129,7 @@ class HomePage extends React.Component {
             renameNavbar={this.props.renameNavbar}
           />
         </Container>
-        <FactsContainer nameContainer={"Информация о авторах"}>
+        <FactsContainer nameContainer={"Информация о авторах"} id={'authors'}>
           {this.state.author ? (
             <RecAuthors
               author={this.state.author}
