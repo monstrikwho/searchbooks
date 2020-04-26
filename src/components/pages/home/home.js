@@ -2,6 +2,7 @@ import React from "react";
 import { Container, ProgressBar } from "react-bootstrap";
 import "../../../sass/home.sass";
 import RecSlider from "./recSlider";
+import RecAuthors from "./recAuthors";
 import FactsContainer from "./factsContainer";
 import authorsData from "./authors.json";
 import recData from "./recomended.json";
@@ -131,31 +132,10 @@ class HomePage extends React.Component {
         </Container>
         <FactsContainer nameContainer={"Информация о авторах"}>
           {this.state.author ? (
-            <React.Fragment>
-              <div className="author">
-                <div className="author-img">
-                  <img
-                    src={this.state.author.img}
-                    alt={this.state.author.name}
-                  />
-                </div>
-                <div className="author-info">
-                  <div className="name">{this.state.author.name}</div>
-                  <div
-                    className="little-desc"
-                    dangerouslySetInnerHTML={{
-                      __html: this.state.author.authorInfo,
-                    }}
-                  />
-                  <div className="desc">
-                    {this.state.author.descArr.map((item, i) => (
-                      <div dangerouslySetInnerHTML={{ __html: item }} key={i} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <ProgressBar now={this.state.progressScale} />
-            </React.Fragment>
+            <RecAuthors
+              author={this.state.author}
+              progressScale={this.state.progressScale}
+            />
           ) : (
             "loading"
           )}
