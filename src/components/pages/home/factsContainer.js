@@ -5,9 +5,9 @@ export default function FactsContainer(props) {
         <div className="container facts">
             <div className="row block-divided">
                 <div className="block-title">
-                    FACTS
+                    {props.nameContainer}
                 </div>
-                <div className="bookfacts">
+                <div className="info_content">
                     {props.children}
                 </div>
             </div>
