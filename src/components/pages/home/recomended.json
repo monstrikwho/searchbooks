@@ -9,7 +9,8 @@
                "author":"Уорд Дж. Р.",
                "genre":"Зарубежное фэнтези",
                "pages":" 79 ",
-               "years":" 2011"
+               "years":" 2011",
+               "readLink": "https://www.litmir.me/br/?b=187657"
             },
             {
                "url":"https://www.litmir.me/bd/?b=147697",
@@ -18,7 +19,8 @@
                "author":"Эдриан Лара",
                "genre":"Зарубежное фэнтези",
                "pages":" 55 ",
-               "years":" 2012"
+               "years":" 2012",
+               "readLink": "https://www.litmir.me/br/?b=147697"
             },
             {
                "url":"https://www.litmir.me/bd/?b=247410",
@@ -27,7 +29,8 @@
                "author":"Молчанова Ирина Алексеевна",
                "genre":"Фэнтези",
                "pages":" 77 ",
-               "years":" 2011"
+               "years":" 2011",
+               "readLink": "https://www.litmir.me/br/?b=247410"
             },
             {
                 "url":"https://www.litmir.me/bd/?b=220160",
@@ -36,8 +39,9 @@
                 "author":"Корсакова Татьяна Викторовна",
                 "genre":"Ужасы / мистика",
                 "pages":" 63 ",
-                "years":" 2012"
-             },
+                "years":" 2012",
+                  "readLink": "https://www.litmir.me/br/?b=220160"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=20300",
                 "img":"https://www.litmir.me/data/Book/0/20000/20300/BC4_1490519373.jpg",
@@ -45,8 +49,9 @@
                 "author":"Мураками Харуки",
                 "genre":"Зарубежная фантастика",
                 "pages":" 104 ",
-                "years":" 2003"
-             },
+                "years":" 2003",
+                  "readLink": "https://www.litmir.me/br/?b=20300"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=219299",
                 "img":"https://www.litmir.me/data/Book/0/219000/219299/BC4_1556457832.jpg",
@@ -54,8 +59,9 @@
                 "author":"Эдриан Лара",
                 "genre":"Зарубежное фэнтези",
                 "pages":" 62 ",
-                "years":" 2013"
-             },
+                "years":" 2013",
+                "readLink": "https://www.litmir.me/br/?b=219299"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=219413",
                 "img":"https://www.litmir.me/data/Book/0/219000/219413/BC4_1490696070.jpg",
@@ -63,8 +69,9 @@
                 "author":"Эдриан Лара",
                 "genre":"Зарубежное фэнтези",
                 "pages":" 58 ",
-                "years":" 2013"
-             },
+                "years":" 2013",
+                "readLink": "https://www.litmir.me/br/?b=219413"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=145607",
                 "img":"https://www.litmir.me/data/Book/0/145000/145607/BC4_1490592877.jpg",
@@ -72,8 +79,9 @@
                 "author":"Молчанова Ирина Алексеевна",
                 "genre":"Фэнтези",
                 "pages":" 82 ",
-                "years":" 2010"
-             },
+                "years":" 2010",
+                "readLink": "https://www.litmir.me/br/?b=145607"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=152963",
                 "img":"https://www.litmir.me/data/Book/0/152000/152963/BC4_1490594683.jpg",
@@ -81,8 +89,9 @@
                 "author":"Бондарь Ирина Михайловна",
                 "genre":"Фэнтези",
                 "pages":" 110 ",
-                "years":" 2011"
-             },
+                "years":" 2011",
+                "readLink": "https://www.litmir.me/br/?b=152963"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=103865",
                 "img":"https://www.litmir.me/BookBinary/103865/1333233008/CoverNormal.jpg/0",
@@ -90,8 +99,9 @@
                 "author":"Синявская Лана",
                 "genre":"Фантастика",
                 "pages":" 53 ",
-                "years":"Не указано"
-             },
+                "years":"Не указано",
+                "readLink": "https://www.litmir.me/br/?b=103865"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=158819",
                 "img":"https://www.litmir.me/data/Book/0/158000/158819/BC4_1491160885.jpg",
@@ -99,8 +109,9 @@
                 "author":"Янкин Роман",
                 "genre":"Детская фантастика",
                 "pages":" 56 ",
-                "years":" 2011"
-             },
+                "years":" 2011",
+                "readLink": "https://www.litmir.me/br/?b=158819"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=139199",
                 "img":"https://www.litmir.me/BookBinary/139199/1333278492/CoverNormal.jpg/0",
@@ -108,8 +119,9 @@
                 "author":"Шаинян Карина Сергеевна",
                 "genre":"Книги о путешествиях",
                 "pages":" 64 ",
-                "years":" 2010"
-             },
+                "years":" 2010",
+                "readLink": "https://www.litmir.me/br/?b=139199"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=55170",
                 "img":"https://www.litmir.me/BookBinary/55170/1333242404/CoverNormal.jpg/0",
@@ -117,8 +129,9 @@
                 "author":"Буровский Андрей Михайлович",
                 "genre":"Ужасы / мистика",
                 "pages":" 95 ",
-                "years":" 2001"
-             },
+                "years":" 2001",
+                "readLink": "https://www.litmir.me/br/?b=55170"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=278644",
                 "img":"https://www.litmir.me/data/Book/0/278000/278644/BC4_1490788955.jpg",
@@ -126,8 +139,9 @@
                 "author":"Райс Энн",
                 "genre":"Зарубежное фэнтези",
                 "pages":" 124 ",
-                "years":" 2016"
-             },
+                "years":" 2016",
+                "readLink": "https://www.litmir.me/br/?b=278644"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=217971",
                 "img":"https://www.litmir.me/data/Book/0/217000/217971/BC4_1490695273.jpg",
@@ -135,8 +149,9 @@
                 "author":"Новикова Ольга Ильинична",
                 "genre":"Ужасы / мистика",
                 "pages":" 56 ",
-                "years":" 2014"
-             },
+                "years":" 2014",
+                "readLink": "https://www.litmir.me/br/?b=217971"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=203440",
                 "img":"https://www.litmir.me/data/Book/0/203000/203440/BC4_1522931741.jpg",
@@ -144,8 +159,9 @@
                 "author":"Блэксмит Джек",
                 "genre":"Фэнтези",
                 "pages":" 85 ",
-                "years":" 2014"
-             },
+                "years":" 2014",
+                "readLink": "https://www.litmir.me/br/?b=203440"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=147840",
                 "img":"https://www.litmir.me/data/Book/0/147000/147840/BC4_1490593340.jpg",
@@ -153,8 +169,9 @@
                 "author":"Лима Мария",
                 "genre":"Зарубежное фэнтези",
                 "pages":" 63 ",
-                "years":" 2011"
-             },
+                "years":" 2011",
+                "readLink": "https://www.litmir.me/br/?b=147840"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=29435",
                 "img":"https://www.litmir.me/BookBinary/29435/1333171868/CoverNormal.jpg/0",
@@ -162,8 +179,9 @@
                 "author":"Веров Ярослав",
                 "genre":"Ужасы / мистика",
                 "pages":" 93 ",
-                "years":" 2007"
-             },
+                "years":" 2007",
+                "readLink": "https://www.litmir.me/br/?b=29435"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=162519",
                 "img":"https://www.litmir.me/data/Book/0/162000/162519/BC4_1490598569.jpg",
@@ -171,8 +189,9 @@
                 "author":"Медведев Антон Николаевич",
                 "genre":"Ужасы / мистика",
                 "pages":" 54 ",
-                "years":"Не указано"
-             },
+                "years":"Не указано",
+                "readLink": "https://www.litmir.me/br/?b=162519"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=186639",
                 "img":"https://www.litmir.me/data/Book/0/186000/186639/BC4_1490624723.jpg",
@@ -180,8 +199,9 @@
                 "author":"Трувинс Олег",
                 "genre":"Фэнтези",
                 "pages":" 55 ",
-                "years":" 2012"
-             }
+                "years":" 2012",
+                "readLink": "https://www.litmir.me/br/?b=186639"
+               }
          ]
     },
     {
@@ -194,8 +214,9 @@
                 "author":"Шелонин Олег Александрович",
                 "genre":"Фэнтези",
                 "pages":" 69 ",
-                "years":" 2009"
-             },
+                "years":" 2009",
+                "readLink": "https://www.litmir.me/br/?b=104085"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=109540",
                 "img":"https://www.litmir.me/data/Book/0/109000/109540/BC4_1490563821.jpg",
@@ -203,8 +224,9 @@
                 "author":"Шелонин Олег Александрович",
                 "genre":"Фэнтези",
                 "pages":" 66 ",
-                "years":" 2009"
-             },
+                "years":" 2009",
+                "readLink": "https://www.litmir.me/br/?b=109540"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=39248",
                 "img":"https://www.litmir.me/BookBinary/39248/1333249661/CoverNormal.jpg/0",
@@ -212,8 +234,9 @@
                 "author":"Баженов Виктор Олегович",
                 "genre":"Фантастика",
                 "pages":" 69 ",
-                "years":" 2004"
-             },
+                "years":" 2004",
+                "readLink": "https://www.litmir.me/br/?b=39248"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=35067",
                 "img":"https://www.litmir.me/data/Book/0/35000/35067/BC4_1490530447.jpg",
@@ -221,8 +244,9 @@
                 "author":"Шелонин Олег Александрович",
                 "genre":"Фантастика",
                 "pages":" 53 ",
-                "years":" 2007"
-             },
+                "years":" 2007",
+                "readLink": "https://www.litmir.me/br/?b=35067"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=192820",
                 "img":"https://www.litmir.me/data/Book/0/192000/192820/BC4_1490630713.jpg",
@@ -230,8 +254,9 @@
                 "author":"Дравин Игорь",
                 "genre":"Фэнтези",
                 "pages":" 97 ",
-                "years":" 2011"
-             },
+                "years":" 2011",
+                "readLink": "https://www.litmir.me/br/?b=192820"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=145155",
                 "img":"https://www.litmir.me/BookBinary/145155/1350394121/CoverNormal.jpg/0",
@@ -239,8 +264,9 @@
                 "author":"Громыко Ольга Николаевна",
                 "genre":"Фантастика",
                 "pages":" 106 ",
-                "years":" 2012"
-             },
+                "years":" 2012",
+                "readLink": "https://www.litmir.me/br/?b=145155"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=28428",
                 "img":"https://www.litmir.me/BookBinary/28428/1333168927/CoverNormal.jpg/0",
@@ -248,8 +274,9 @@
                 "author":"Уиндем Джон Паркс Лукас Бейнон Харрис",
                 "genre":"Зарубежная фантастика",
                 "pages":" 59 ",
-                "years":" 2002"
-             },
+                "years":" 2002",
+                "readLink": "https://www.litmir.me/br/?b=28428"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=187395",
                 "img":"https://www.litmir.me/data/Book/0/187000/187395/BC4_1490625467.jpg",
@@ -257,8 +284,9 @@
                 "author":"Завойчинская Милена",
                 "genre":"Фэнтези",
                 "pages":" 78 ",
-                "years":" 2013"
-             },
+                "years":" 2013",
+                "readLink": "https://www.litmir.me/br/?b=187395"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=169763",
                 "img":"https://www.litmir.me/data/Book/0/169000/169763/BC4_1490604861.jpg",
@@ -266,8 +294,9 @@
                 "author":"Ефимов Алексей Алексеевич",
                 "genre":"Фэнтези",
                 "pages":" 88 ",
-                "years":" 2013"
-             },
+                "years":" 2013",
+                "readLink": "https://www.litmir.me/br/?b=169763"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=203900",
                 "img":"https://www.litmir.me/data/Book/0/203000/203900/BC4_1490643661.jpg",
@@ -275,8 +304,9 @@
                 "author":"Дравин Игорь",
                 "genre":"Фэнтези",
                 "pages":" 104 ",
-                "years":" 2012"
-             },
+                "years":" 2012",
+                "readLink": "https://www.litmir.me/br/?b=203900"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=90775",
                 "img":"https://www.litmir.me/BookBinary/90775/1333212253/CoverNormal.jpg/0",
@@ -284,8 +314,9 @@
                 "author":"Степной Аркадий",
                 "genre":"Фэнтези",
                 "pages":" 72 ",
-                "years":" 2009"
-             },
+                "years":" 2009",
+                "readLink": "https://www.litmir.me/br/?b=90775"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=157755",
                 "img":"https://www.litmir.me/data/Book/0/157000/157755/BC4_1491160290.jpg",
@@ -293,8 +324,9 @@
                 "author":"Дравин Игорь",
                 "genre":"Фэнтези",
                 "pages":" 80 ",
-                "years":" 2011"
-             },
+                "years":" 2011",
+                "readLink": "https://www.litmir.me/br/?b=157755"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=157759",
                 "img":"https://www.litmir.me/data/Book/0/157000/157759/BC4_1491160291.jpg",
@@ -302,8 +334,9 @@
                 "author":"Дравин Игорь",
                 "genre":"Фэнтези",
                 "pages":" 82 ",
-                "years":" 2011"
-             },
+                "years":" 2011",
+                "readLink": "https://www.litmir.me/br/?b=157759"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=157758",
                 "img":"https://www.litmir.me/data/Book/0/157000/157758/BC4_1491160291.jpg",
@@ -311,8 +344,9 @@
                 "author":"Дравин Игорь",
                 "genre":"Фэнтези",
                 "pages":" 78 ",
-                "years":" 2010"
-             },
+                "years":" 2010",
+                "readLink": "https://www.litmir.me/br/?b=157758"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=215127",
                 "img":"https://www.litmir.me/data/Book/0/215000/215127/BC4_1490693674.jpg",
@@ -320,8 +354,9 @@
                 "author":"Адамович Игорь",
                 "genre":"Фэнтези",
                 "pages":" 72 ",
-                "years":" 2012"
-             },
+                "years":" 2012",
+                "readLink": "https://www.litmir.me/br/?b=215127"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=132462",
                 "img":"https://www.litmir.me/BookBinary/132462/1333224682/CoverNormal.jpg/0",
@@ -329,8 +364,9 @@
                 "author":"Каменистый Артем",
                 "genre":"Боевики, остросюжетная литература",
                 "pages":" 88 ",
-                "years":" 2010"
-             },
+                "years":" 2010",
+                "readLink": "https://www.litmir.me/br/?b=132462"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=168302",
                 "img":"https://www.litmir.me/data/Book/0/168000/168302/BC4_1490603464.jpg",
@@ -338,8 +374,9 @@
                 "author":"Башун Виталий Михайлович",
                 "genre":"Фэнтези",
                 "pages":" 76 ",
-                "years":" 2011"
-             },
+                "years":" 2011",
+                "readLink": "https://www.litmir.me/br/?b=168302"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=256603",
                 "img":"https://www.litmir.me/data/Book/0/256000/256603/BC4_1490775420.jpg",
@@ -347,8 +384,9 @@
                 "author":"Зайцев Сергей Григорьевич",
                 "genre":"Фэнтези",
                 "pages":" 112 ",
-                "years":" 2015"
-             },
+                "years":" 2015",
+                "readLink": "https://www.litmir.me/br/?b=256603"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=118325",
                 "img":"https://www.litmir.me/data/Book/0/118000/118325/BC4_1490569234.jpg",
@@ -356,8 +394,9 @@
                 "author":"Бадей Сергей",
                 "genre":"Фэнтези",
                 "pages":" 66 ",
-                "years":" 2009"
-             },
+                "years":" 2009",
+                "readLink": "https://www.litmir.me/br/?b=118325"
+               },
              {
                 "url":"https://www.litmir.me/bd/?b=243221",
                 "img":"https://www.litmir.me/data/Book/0/243000/243221/BC4_1490716512.jpg",
@@ -365,8 +404,9 @@
                 "author":"Лор Питтакус",
                 "genre":"Боевики, остросюжетная литература",
                 "pages":" 56 ",
-                "years":" 2015"
-             }
+                "years":" 2015",
+                "readLink": "https://www.litmir.me/br/?b=243221"
+               }
         ]
     }
 
