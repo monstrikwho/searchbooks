@@ -1,0 +1,18 @@
+{
+  "name": "mern",
+  "version": "0.0.0",
+  "description": "CRUD in MongoDB, Express, React/Hooks, Node",
+  "main": "index.js",
+  "license": "ISC",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "concurrently": "^5.0.2",
+    "cross-env": "^7.0.2"
+  }
+}
